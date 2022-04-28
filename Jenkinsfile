@@ -11,7 +11,7 @@ pipeline {
      }
      stage ('docker-build') {
          steps{
-             sh "docker build -t lihg/jenkinstestjava:0.01 ."
+             sh "sudo docker build -t lihg/jenkinstestjava:0.01 ."
          }
      }
    }
