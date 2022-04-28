@@ -6,7 +6,6 @@ pipeline {
    stages {
      stage ('build') {
        steps {
-         git 'https://github.com/lihg0629/jenkinstest.git'
          sh 'mvn clean package'
        }
      }
