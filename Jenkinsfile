@@ -14,7 +14,7 @@ pipeline {
          steps{
              script{
                 def myimage = docker.build('lihg/jenkinstestjava:0.01')
-                docker.withRegistry("https://index.docker.io/v2/", "faea6989-9ad7-4b86-b559-e1b8f0cd8d31"){
+                docker.withRegistry("https://index.docker.io/v1/", "faea6989-9ad7-4b86-b559-e1b8f0cd8d31"){
                     myimage.push()
                 }
                 // myimage.push()
