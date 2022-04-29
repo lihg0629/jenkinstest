@@ -28,8 +28,10 @@ pipeline {
       //  steps{
       //    sh "ssh root@"
       //  }
-        withKubeConfig([credentialsId:'kubejenkins-k8s-3', serverUrl:'https://192.168.0.11:6443']){
-          sh 'kubectl get node'
+        steps{
+          withKubeConfig([credentialsId:'kubejenkins-k8s-3', serverUrl:'https://192.168.0.11:6443']){
+            sh 'kubectl get node'
+          }
         }
      }
    }
