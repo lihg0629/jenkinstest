@@ -24,10 +24,13 @@ pipeline {
             // docker.build('lihg/jenkinstestjava:0.01')
          }
      }
-    //  stage  ('k8s-deploy') {
-    //    steps{
-    //      sh "ssh root@"
-    //    }
-    //  }
+     stage  ('k8s-deploy') {
+      //  steps{
+      //    sh "ssh root@"
+      //  }
+        withKubeConfig([credentialsId:'kubejenkins-k8s-3', serverUrl:'https://192.168.0.11:6443']){
+          sh 'kubectl get node'
+        }
+     }
    }
  }
