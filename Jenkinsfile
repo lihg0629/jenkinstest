@@ -13,8 +13,8 @@ pipeline {
      stage ('docker-build') {
          steps{
              script{
-                             docker.build('lihg/jenkinstestjava:0.01')
-
+                def myimage = docker.build('lihg/jenkinstestjava:0.01')
+                myimage.push()
              }
             //  sh "sudo docker build -t lihg/jenkinstestjava:0.01 ."
             // docker.build('lihg/jenkinstestjava:0.01')
