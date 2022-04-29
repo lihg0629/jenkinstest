@@ -12,14 +12,15 @@ pipeline {
      }
      stage ('docker-build') {
          steps{
-             script{
-                def myimage = docker.build('lihg/jenkinstestjava:0.01')
-                docker.withRegistry("https://index.docker.io/v1/", "faea6989-9ad7-4b86-b559-e1b8f0cd8d31"){
-                    myimage.push()
-                }
-                // myimage.push()
-             }
-            //  sh "sudo docker build -t lihg/jenkinstestjava:0.01 ."
+            //  script{
+            //     def myimage = docker.build('lihg/jenkinstestjava:0.01')
+            //     docker.withRegistry("https://index.docker.io/v1/", "faea6989-9ad7-4b86-b559-e1b8f0cd8d31"){
+            //         myimage.push()
+            //     }
+            //     // myimage.push()
+            //  }
+             sh "sudo docker build -t lihg/jenkinstestjava:0.01 ."
+             sh "sudo docker push lihg/jenkinstestjava:0.01"
             // docker.build('lihg/jenkinstestjava:0.01')
          }
      }
