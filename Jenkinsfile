@@ -2,6 +2,7 @@ pipeline {
    agent any
     tools {
         maven "M385"
+        docker "DK"
     }
    stages {
      stage ('build') {
