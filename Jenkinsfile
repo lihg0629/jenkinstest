@@ -2,7 +2,7 @@ pipeline {
    agent any
     tools {
         maven "M385"
-        docker "DK"
+        // docker "DK"
     }
    stages {
      stage ('build') {
@@ -13,7 +13,7 @@ pipeline {
      stage ('docker-build') {
          steps{
             //  sh "sudo docker build -t lihg/jenkinstestjava:0.01 ."
-            docker.build('lihg/jenkinstestjava:0.01').push()
+            docker.build('lihg/jenkinstestjava:0.01')
          }
      }
    }
